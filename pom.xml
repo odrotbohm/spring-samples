@@ -4,17 +4,31 @@
 	<groupId>de.olivergierke.samples</groupId>
 	<artifactId>spring-samples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<!-- <spring.version>4.0.0.BUILD-SNAPSHOT</spring.version>-->
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>3.0.5.BUILD-SNAPSHOT</version>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-			<scope>test</scope>
+			<version>4.11</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -22,12 +36,19 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3</version>
 				<configuration>
-					<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+	
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>http://repo.springsource.org/libs-snapshot</url>
+		</repository>
+	</repositories>
 </project>
